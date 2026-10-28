@@ -16,7 +16,7 @@ I build complete web products, from the interface to the database: real-time vid
 | **RegRadar** | AI compliance assistant that answers questions about Central Bank of Nigeria rules with exact citations | React, Node.js, Python FastAPI, PostgreSQL + pgvector, Terraform, AWS | [Live](https://regradar-kur5.onrender.com) · [Code](https://github.com/AnigboguJohn/regradar) |
 | **Tranyer** | Multi-vendor marketplace in 8 languages and 7 currencies | React, TypeScript, Tailwind, shadcn/ui, Supabase | [Live](https://tranyer.vercel.app) · [Code](https://github.com/AnigboguJohn/Tranyer-Project) |
 | **ADF Magazine** | Responsive defence news magazine website | HTML, Sass, JavaScript | [Live](https://anigbogujohn.github.io/blog_web_design/) · [Code](https://github.com/AnigboguJohn/blog_web_design) |
-| **Recipes App** | Recipe-sharing app with sign-in and owner-only editing | PHP, Laravel, Blade, MySQL | [Code](https://github.com/AnigboguJohn/Recipes_App_Laravel) |
+| **My Recipes Book** | Mobile-first recipe app: search, categories, saved recipes, ratings and step-by-step cooking mode with timers | PHP 8.3, Laravel 12, Blade, SQLite, Docker | [Live](https://recipes-app-7qw7.onrender.com) · [Code](https://github.com/AnigboguJohn/Recipes_App_Laravel) |
 | **Switch** | Esusu-style savings and loans platform with OTP sign-up | PHP, MySQL | [Code](https://github.com/AnigboguJohn/Switch) |
 
 ## About this site
@@ -40,7 +40,7 @@ portfolio/
 │  ├─ icons/favicon.svg
 │  └─ images/
 │     ├─ profile/                 profile photo
-│     └─ projects/                screenshots: gather/, regradar/, tranyer/, adf-magazine/
+│     └─ projects/                screenshots: gather/, regradar/, tranyer/, recipes/, adf-magazine/
 ├─ vercel.json                    optional Vercel hosting settings
 └─ README.md
 ```

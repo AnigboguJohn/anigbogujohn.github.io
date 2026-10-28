@@ -113,6 +113,47 @@ window.PORTFOLIO = {
       code: "https://github.com/AnigboguJohn/Tranyer-Project",
     },
     {
+      id: "recipes",
+      title: "My Recipes Book",
+      tagline: "Recipe app: search, save, rate and cook step by step (Laravel 12)",
+      year: "2024 · 2026",
+      tags: ["php", "fullstack"],
+      badge: "Live",
+      summary:
+        "A mobile-first recipe app with nine Nigerian recipes to start. Search by name or ingredient, filter by category, save favourites, rate dishes and cook step by step with built-in timers. Signed-in cooks post their own recipes with a photo.",
+      cover: "assets/images/projects/recipes/home.jpg",
+      gallery: [
+        ["assets/images/projects/recipes/home.jpg", "Home: search, categories, popular recipes"],
+        ["assets/images/projects/recipes/recipe.jpg", "Recipe page: time, servings, difficulty, calories, ingredients and steps"],
+        ["assets/images/projects/recipes/cooking-mode.jpg", "Cooking mode: one step at a time with a timer"],
+        ["assets/images/projects/recipes/categories.jpg", "Filtered by category"],
+        ["assets/images/projects/recipes/home-phone.jpg", "Phone layout with the bottom menu"],
+        ["assets/images/projects/recipes/recipe-phone.jpg", "Recipe page on a phone"],
+      ],
+      features: [
+        "Search by recipe name or ingredient, and filter by category (Breakfast, Lunch, Dinner, Soups, Snacks, Desserts, Drinks)",
+        "Cooking mode: one step at a time with Previous/Next, a progress bar and a timer for any step that mentions minutes",
+        "Save recipes with a heart (no page reload) and a Saved page",
+        "1 to 5 star ratings: you can't rate your own recipe, rating again replaces your old rating, and top-rated recipes lead Popular",
+        "Add and edit recipes with photo preview, category, servings, difficulty and calories; only the owner can edit or delete",
+        "Profile with your recipes, saved count and ratings received; editable name, email and avatar",
+        "Upgraded from Laravel 5.4 to Laravel 12 on PHP 8.3, and fixed security holes (profile and recipe ownership, unsafe file deletion)",
+        "Docker deploy on Render, demo account and 45 automated browser checks",
+      ],
+      stack: ["PHP 8.3", "Laravel 12", "Blade", "Eloquent", "SQLite / MySQL", "Vanilla JS", "CSS", "Docker", "Render"],
+      tree: `Recipes_App_Laravel/
+├─ app/Http/Controllers/  PostsController (recipes, search, cooking mode), SavedController,
+│                         RatingController, HomeController (profile), UserController, Auth/
+├─ app/                   Post (categories, steps, timers), Rating, User (saved recipes)
+├─ database/              migrations/ (recipes, details, favorites, ratings), seeds/ (demo data, photos)
+├─ resources/views/       layouts/, partials/, posts/ (index, show, cook, form), saved, home, auth/
+├─ public/                css/recipes.css · js/recipes.js
+└─ Dockerfile · docker/ · render.yaml`,
+      live: "https://recipes-app-7qw7.onrender.com",
+      code: "https://github.com/AnigboguJohn/Recipes_App_Laravel",
+      note: "Hosted on a free plan: the first visit can take up to a minute to wake up. Demo login: demo@recipes.test / demo12345.",
+    },
+    {
       id: "adf",
       title: "ADF Magazine",
       tagline: "Defence news blog website",
@@ -138,38 +179,6 @@ window.PORTFOLIO = {
 └─ assets/ (css, sass, js, webfonts) · images/`,
       live: "https://anigbogujohn.github.io/blog_web_design/",
       code: "https://github.com/AnigboguJohn/blog_web_design",
-    },
-    {
-      id: "recipes",
-      title: "Recipes App",
-      tagline: "Recipe management web app (Laravel)",
-      year: "2024",
-      tags: ["php", "fullstack"],
-      summary: "A recipe-sharing web app. Anyone can browse recipes; signed-in users post their own with a photo, prep time, ingredients and step-by-step preparation, and only the owner can edit or delete them.",
-      code_preview: `// PostsController.php
-public function __construct() {
-    $this->middleware('auth', ['except' => ['index', 'show']]);
-}
-
-public function edit($id) {
-    $post = Post::find($id);
-    if (auth()->user()->id !== $post->user_id) {
-        return redirect("/")->with('error', "You are not authorized");
-    }`,
-      features: [
-        "Laravel authentication: register, login and password reset",
-        "Create, edit, delete and view recipes: title, prep time, description, ingredients and preparation",
-        "Photo upload for each recipe, with image validation",
-        "Only the owner can edit or delete a recipe",
-        "Users can edit their own profile",
-      ],
-      stack: ["PHP", "Laravel 8", "Blade", "MySQL", "Bootstrap"],
-      tree: `Recipes_App_Laravel/
-├─ app/Http/Controllers/  Auth/, PostsController, UserController
-├─ database/migrations/   users, recipes (posts), recipe owner
-├─ resources/views/       auth/, posts/ (create, edit, index, show), layouts/
-└─ routes/web.php · routes/api.php`,
-      code: "https://github.com/AnigboguJohn/Recipes_App_Laravel",
     },
     {
       id: "switch",
