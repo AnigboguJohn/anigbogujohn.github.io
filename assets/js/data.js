@@ -184,32 +184,38 @@ window.PORTFOLIO = {
       id: "switch",
       title: "Switch",
       tagline: "Savings and loans platform (Esusu-style)",
-      year: "2024",
+      year: "2024 · 2026",
       tags: ["php", "fullstack"],
-      summary: "A digital savings and loans system, an alternative to banks for communities. Members sign up, verify with a one-time code, deposit, withdraw, borrow and repay.",
-      code_preview: `<?php // deposit.php
-session_start();
-
-if (!isset($_SESSION['user_id'])) {
-    header("Location: signin.php");
-    exit();
-}
-
-// Update the member's balance and total deposit,
-// then log the transaction in the history`,
-      features: [
-        "Sign up and sign in with one-time code (OTP) verification",
-        "Deposit, withdraw, borrow and repay",
-        "Member dashboard with balance",
-        "Full transaction history",
-        "PHP sessions and a MySQL database",
+      badge: "Live",
+      summary:
+        "A savings and loans app for cooperative members, an alternative to banks for communities. Members deposit, withdraw, borrow against their savings, pay back and send money to each other, with a dashboard and full transaction history.",
+      cover: "assets/images/projects/switch/dashboard.jpg",
+      gallery: [
+        ["assets/images/projects/switch/dashboard.jpg", "Dashboard: balance, totals, Transactions-Go and recent history"],
+        ["assets/images/projects/switch/rules.jpg", "Money rules: borrowing is capped at 2x total deposits"],
+        ["assets/images/projects/switch/history.jpg", "Transaction history with running balance and filters"],
+        ["assets/images/projects/switch/landing.jpg", "Landing page"],
+        ["assets/images/projects/switch/dashboard-phone.jpg", "Dashboard on a phone"],
       ],
-      stack: ["PHP", "MySQL", "HTML", "CSS"],
+      features: [
+        "Deposit, withdraw, borrow, pay back, and transfer to another member by username",
+        "Rules enforced on the server: no overdrafts, borrowing capped at 2x total deposits, paybacks limited to what you owe",
+        "Money stored in kobo (never floats) and every transaction atomic, so simultaneous requests cannot overdraw",
+        "Transaction history with running balance, filterable by type",
+        "Profile: edit personal and contact info, change password, close account once balance and debt are zero",
+        "Rebuilt the original PHP/MySQL code securely: prepared statements (fixing SQL injection), hashed passwords, CSRF tokens, sign-in lockout and a strict Content-Security-Policy",
+        "Docker deploy on Render, demo account and 30 automated browser tests (Playwright)",
+      ],
+      stack: ["PHP 8.3", "SQLite", "PDO", "HTML", "CSS", "Apache", "Docker", "Render", "Playwright"],
       tree: `Switch/
-├─ signup.php · signin.php · otp_verification.php
-├─ dashbord.php · deposit.php · withdraw.php · borrow.php · payback.php
-└─ transactions.php · transaction_history.php · connection.php`,
-      code: "https://github.com/AnigboguJohn/Switch",
+├─ public/     dashboard, transact (deposit, withdraw, borrow, payback, transfer),
+│              history, profile, sign-in, sign-up, health check
+├─ src/        bootstrap (database, sessions, CSRF), money.php (transaction rules),
+│              schema.sql, migrate + demo seed
+├─ tests/e2e/  Playwright browser tests
+└─ Dockerfile · docker/ · render.yaml`,
+      live: "https://switch-investments.onrender.com",
+      note: "Hosted on a free plan: the first visit can take up to a minute to wake up. Demo login: demo / Demo@1234.",
     },
   ],
 

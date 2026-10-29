@@ -17,7 +17,7 @@ I build complete web products, from the interface to the database: real-time vid
 | **Tranyer** | Multi-vendor marketplace in 8 languages and 7 currencies | React, TypeScript, Tailwind, shadcn/ui, Supabase | [Live](https://tranyer.vercel.app) · [Code](https://github.com/AnigboguJohn/Tranyer-Project) |
 | **ADF Magazine** | Responsive defence news magazine website | HTML, Sass, JavaScript | [Live](https://anigbogujohn.github.io/blog_web_design/) · [Code](https://github.com/AnigboguJohn/blog_web_design) |
 | **My Recipes Book** | Mobile-first recipe app: search, categories, saved recipes, ratings and step-by-step cooking mode with timers | PHP 8.3, Laravel 12, Blade, SQLite, Docker | [Live](https://recipes-app-7qw7.onrender.com) · [Code](https://github.com/AnigboguJohn/Recipes_App_Laravel) |
-| **Switch** | Esusu-style savings and loans platform with OTP sign-up | PHP, MySQL | [Code](https://github.com/AnigboguJohn/Switch) |
+| **Switch** | Esusu-style savings and loans platform: deposit, withdraw, borrow, pay back, transfer | PHP 8.3, SQLite, Docker | [Live](https://switch-investments.onrender.com) |
 
 ## About this site
 

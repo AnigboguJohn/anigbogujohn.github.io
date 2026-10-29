@@ -73,7 +73,7 @@
       '<div class="project-links">' +
       '<button class="btn btn-sm btn-solid" data-open="' + p.id + '">Details</button>' +
       (p.live ? '<a class="btn btn-sm btn-ghost" href="' + esc(p.live) + '" target="_blank" rel="noopener">Live site ' + arrow + "</a>" : "") +
-      '<a class="btn btn-sm btn-ghost" href="' + esc(p.code) + '" target="_blank" rel="noopener">Code ' + arrow + "</a>" +
+      (p.code ? '<a class="btn btn-sm btn-ghost" href="' + esc(p.code) + '" target="_blank" rel="noopener">Code ' + arrow + "</a>" : "") +
       "</div></div></article>";
   }).join("");
 
@@ -145,7 +145,7 @@
       "<h3>// folders and files</h3><pre class=\"tree\">" + esc(p.tree) + "</pre>" +
       '<div class="project-links">' +
       (p.live ? '<a class="btn btn-sm btn-solid" href="' + esc(p.live) + '" target="_blank" rel="noopener">Open live site ' + arrow + "</a>" : "") +
-      '<a class="btn btn-sm btn-ghost" href="' + esc(p.code) + '" target="_blank" rel="noopener">View code on GitHub ' + arrow + "</a></div>" +
+      (p.code ? '<a class="btn btn-sm btn-ghost" href="' + esc(p.code) + '" target="_blank" rel="noopener">View code on GitHub ' + arrow + "</a>" : "") + "</div>" +
       (p.note ? '<p class="modal-note">' + esc(p.note) + "</p>" : "") +
       "</div></div>";
     if (p.gallery && p.gallery.length) showSlide(0);
