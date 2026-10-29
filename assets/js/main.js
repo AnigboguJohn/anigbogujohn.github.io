@@ -192,23 +192,13 @@
   window.addEventListener("scroll", function () { nav.classList.toggle("scrolled", window.scrollY > 10); }, { passive: true });
 
   /* ---------- scroll reveal, active link, counters ---------- */
-  function countUp(el) {
-    var end = Number(el.dataset.count);
-    var suffix = el.dataset.suffix || "";
-    var start = performance.now();
-    function tick(now) {
-      var k = Math.min(1, (now - start) / 1200);
-      el.textContent = Math.round(end * (1 - Math.pow(1 - k, 3))) + suffix;
-      if (k < 1) requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
-  }
+  // Stats numbers are written in the HTML and never animated, so every visitor, screenshot tool
+  // and link preview sees the real values (a count-up from 0 showed "0 projects" to some of them).
   if ("IntersectionObserver" in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (!en.isIntersecting) return;
         en.target.classList.add("in");
-        $$("[data-count]", en.target).forEach(countUp);
         io.unobserve(en.target);
       });
     }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
@@ -224,7 +214,6 @@
     sections.forEach(function (s) { spy.observe(s); });
   } else {
     $$(".reveal").forEach(function (el) { el.classList.add("in"); });
-    $$("[data-count]").forEach(function (el) { el.textContent = el.dataset.count + (el.dataset.suffix || ""); });
   }
 
   /* ---------- contact form: opens WhatsApp or email with the message ---------- */
